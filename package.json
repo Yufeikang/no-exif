@@ -1,0 +1,71 @@
+{
+  "name": "no-exif",
+  "version": "1.0.0",
+  "description": "remove exif info",
+  "main": "main.js",
+  "scripts": {
+    "start": "electron .",
+    "build": "babel renderer.js -o dist/index.js --presets es2015",
+    "pack:all": "build --mac --win",
+    "pack:dir": "build --dir"
+  },
+  "build": {
+    "productName": "No Exif",
+    "appId": "net.kangyufei.no-exif",
+    "asar": true,
+    "artifactName": "${productName}-${version}-${os}-${arch}.${ext}",
+    "dmg": {
+      "contents": [
+        {
+          "x": 130,
+          "y": 220
+        },
+        {
+          "x": 410,
+          "y": 220,
+          "type": "link",
+          "path": "/Applications"
+        }
+      ],
+      "title": "照片Exif信息移除工具"
+    },
+    "mac": {
+      "icon": "./res/icons.icns",
+      "category": "public.app-category.developer-tools"
+    },
+    "linux": {
+      "icon": "./res",
+      "category": "Tools",
+      "target": [
+        "deb",
+        "rpm",
+        "AppImage"
+      ]
+    },
+    "win": {
+      "icon": "./res/icons.ico",
+      "target": "nsis"
+    },
+    "nsis": {
+      "oneClick": false,
+      "allowToChangeInstallationDirectory": true,
+      "artifactName": "${productName}-${version}-${os}-${arch}-setup.${ext}",
+      "deleteAppDataOnUninstall": true
+    },
+    "directories": {
+      "output": "./release"
+    }
+  },
+  "author": "kang",
+  "devDependencies": {
+    "babel-cli": "^6.26.0",
+    "babel-preset-es2015": "^6.24.1",
+    "electron": "~1.7.8",
+    "electron-builder": "^19.45.4",
+    "electron-osx-sign": "^0.4.7",
+    "electron-packager": "^9.1.0"
+  },
+  "dependencies": {
+    "piexifjs": "^1.0.3"
+  }
+}

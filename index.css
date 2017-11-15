@@ -1,0 +1,38 @@
+@font-face {
+    font-family: icon;
+    src: url('./res/iconfont.ttf');
+}
+
+.titlebar {
+    -webkit-user-select: none;
+    -webkit-app-region: drag;
+    text-align: center;
+    width: 100%;
+    font-family: "Droid Sans", "Arial", "Microsoft YaHei" ;
+    /*color: blue;*/
+}
+
+h1 {
+    color: antiquewhite;
+}
+
+
+
+.clear {
+    -webkit-user-select: none;
+    font-family: icon;
+    justify-content: center;
+    text-align: center;
+    font-size: 220px;
+    width: 400px;
+    color: #123456;
+    margin-top: 50px;
+    height: 280px;
+}
+
+#message {
+    font-family: "Droid Sans", "Arial", "Microsoft YaHei" ;
+    font-size: 12px;
+    width: 350px;
+    height: 20px;
+}
